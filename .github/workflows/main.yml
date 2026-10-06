@@ -8,7 +8,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
          - name: checkout code 
-           uses: actions@v4
+           uses: actions/checkout@v4
          - name: print message 
            run: echo 'job1'
 
@@ -17,7 +17,7 @@ jobs:
        needs: job1
        steps:
           - name: checkout code   
-            uses: actions@v4
+            uses: actions/checkout@v4
           - name: print message 
             run:  echo 'job2'     
     job3:
@@ -25,7 +25,7 @@ jobs:
        needs: job2
        steps:
           - name: checkout code   
-            uses: actions@v4
+            uses: actions/checkout@v4
           - name: print message 
             run:  echo 'job3'     
     job4:
@@ -33,7 +33,7 @@ jobs:
        needs: job3
        steps:
           - name: checkout code   
-            uses: actions@v4
+            uses: actions/checkout@v4
           - name: print message 
             run:  echo 'job4'     
     job5:
@@ -41,7 +41,7 @@ jobs:
        needs: job4
        steps:
           - name: checkout code   
-            uses: actions@v4
+            uses: actions/checkout@v4
           - name: print message 
             run:  echo 'job5'     
     job6:
@@ -49,6 +49,6 @@ jobs:
        needs: [job4,job5]
        steps:
           - name: checkout code   
-            uses: actions@v4
+            uses: actions/checkout@v4
           - name: print message 
             run:  echo 'job6'     
